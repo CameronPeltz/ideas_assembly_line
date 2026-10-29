@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/house_floor_schedule/__init__.py
+src/house_floor_schedule/__main__.py
+src/house_floor_schedule/archive.py
+src/house_floor_schedule/calendar.py
+src/house_floor_schedule/cli.py
+src/house_floor_schedule/schedule.py
+src/house_floor_schedule_ical.egg-info/PKG-INFO
+src/house_floor_schedule_ical.egg-info/SOURCES.txt
+src/house_floor_schedule_ical.egg-info/dependency_links.txt
+src/house_floor_schedule_ical.egg-info/entry_points.txt
+src/house_floor_schedule_ical.egg-info/requires.txt
+src/house_floor_schedule_ical.egg-info/top_level.txt
+tests/test_schedule.py
