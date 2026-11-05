@@ -1,0 +1,4 @@
+bill_type,number,stage,package_id,text_date,printed_date,summary_date,delay_days,pages,title
+hr,1,passed,BILLS-119hr1eh,2025-05-23,2025-05-22,2025-06-10,18,1018,One Big Beautiful Bill Act
+hr,1,reported,BILLS-119hr1rh,2025-05-21,2025-05-20,2025-09-22,124,1118,One Big Beautiful Bill Act
+hr,10786,introduced,BILLS-119hr10786ih,2026-10-13,2026-10-09,2026-10-13,0,,Civic Literacy in Higher Education Act

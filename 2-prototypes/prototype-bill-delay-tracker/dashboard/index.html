@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bill Delay Tracker</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root { --blue: #104378; --red: #b2182b; --ink: #1f2933; --muted: #6b7280; --line: #e5e7eb; }
+body { font-family: "Source Sans 3", system-ui, sans-serif; color: var(--ink); margin: 0; padding: 24px 16px; max-width: 1040px; margin-inline: auto; background: #fff; }
+h1 { margin: 0 0 4px; } .eyebrow { color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-size: 12px; margin: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 20px 0; }
+.card { border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+.card .value { font-size: 28px; font-weight: 700; color: var(--blue); } .card .label { font-size: 13px; } .card .note { font-size: 11px; color: var(--muted); }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: end; margin: 8px 0 16px; font-size: 13px; }
+.controls label { display: flex; flex-direction: column; gap: 4px; } .controls select, .controls input, .controls button { font: inherit; padding: 4px 8px; }
+.strip { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px; margin: 4px 0 0 56px; font-size: 13px; }
+.strip label.check { display: flex; align-items: center; gap: 6px; }
+.slider { display: flex; align-items: center; gap: 10px; font-size: 13px; } .slider input { width: min(360px, 60%); }
+figure { margin: 0 0 24px; display: flex; flex-direction: column; }
+.export-row { order: -1; display: flex; justify-content: flex-end; gap: 4px; min-height: 20px; }
+.export-row button, .heading-row button { font: inherit; font-size: 12px; color: var(--muted); background: none; border: 0; padding: 2px 6px; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.export-row button:hover, .heading-row button:hover, .export-row button:focus-visible, .heading-row button:focus-visible { color: var(--blue); }
+.heading-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; } figure svg { max-width: 100%; height: auto; display: block; }
+.presumm { font-size: 12px; color: var(--muted); margin: -8px 0 16px; }
+.lists h2 { font-size: 18px; margin: 0 0 4px; }
+.lists section { margin: 0 0 24px; }
+.lists table { border-collapse: collapse; width: 100%; font-size: 13px; margin: 8px 0 0; }
+.lists th, .lists td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.lists th { color: var(--muted); font-weight: 600; }
+.lists th.num, .lists td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.lists td.title { overflow-wrap: anywhere; min-width: 160px; }
+.lists td.nowrap { white-space: nowrap; }
+.lists .table-wrap { overflow-x: auto; }
+@media (max-width: 600px) { .lists th, .lists td { padding: 6px 4px; } .lists td.nowrap { white-space: normal; } .lists td.title { min-width: 0; } }
+.lists a { color: var(--blue); }
+.lists .note { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.caveat { background: #fff8e6; border-left: 4px solid #eec05e; padding: 10px 14px; font-size: 13px; }
+.error { color: var(--red); font-weight: 600; }
+.tooltip { position: absolute; pointer-events: none; background: var(--ink); color: #fff; font-size: 12px; padding: 6px 8px; border-radius: 4px; display: none; }
+</style>
+</head>
+<body>
+<p class="eyebrow">Congressional Tech · proposal IV.2 · prototype</p>
+<h1>Bill Delay Tracker</h1>
+<p id="subtitle">Lag between a bill text version appearing on GovInfo and its CRS summary on Congress.gov.</p>
+<div id="controls" class="controls"></div>
+<div id="cards" class="cards"></div>
+<p id="pre-text" class="presumm"></p>
+<figure id="histogram">
+  <div id="hist-chart"></div>
+  <div class="strip">
+    <label class="slider">Bin width <input type="range" id="bin-width" min="7" max="90" step="1" value="30" aria-label="Bin width in days"> <span id="bin-width-label">30-day bins</span></label>
+    <label class="check"><input type="checkbox" id="include-waiting" checked>Include bills still waiting</label>
+  </div>
+  <div class="export-row" data-figure="histogram" data-label="histogram"></div>
+</figure>
+<figure id="timeseries"><div class="export-row" data-figure="timeseries" data-label="share by month"></div><div class="chart"></div></figure>
+<figure id="cumulative"><div class="export-row" data-figure="cumulative" data-label="cumulative bills"></div><div class="chart"></div></figure>
+<figure id="cumulative-pages"><div class="export-row" data-figure="cumulative-pages" data-label="cumulative pages"></div><div class="chart"></div></figure>
+<div class="lists">
+<section id="longest-lags"><div class="heading-row"><h2>Longest lags</h2><button type="button" data-csv="longest-lags" aria-label="Download longest lags as CSV">Download CSV</button></div><div class="table-wrap"></div></section>
+<section id="oldest-waiting"><div class="heading-row"><h2>Oldest bills still waiting</h2><button type="button" data-csv="oldest-waiting" aria-label="Download oldest waiting bills as CSV">Download CSV</button></div><div class="table-wrap"></div></section>
+</div>
+<div class="caveat">This page measures the introduced stage: CRS writes summaries for introduced versions only in the 119th Congress ("CRS is not writing bill summaries for subsequent versions of measures as they move through the legislative process", Congress.gov help, Bill Summaries). The <span id="exceptions">–</span> later-stage summaries CRS wrote anyway are left out here and kept in the data under their stage. The text date is the day GovInfo took the version in (the MODS record's dateIngested), not the date printed on the bill, which runs days to weeks earlier; the CSV exports carry both. The summary date is what the Congress.gov API documents as the date the summary was last updated; it exposes no first-publication date, so a summary revised later reads slower than it was.</div>
+<div id="tooltip" class="tooltip"></div>
+<!-- Classic scripts in dependency order, not ES modules: this page opens from disk (file://), where
+     Chromium blocks module scripts and fetch(). metrics.js publishes window.BillDelayMetrics,
+     ../data/delays.js (written by delays.py beside delays.json) publishes window.BILL_DELAYS, and
+     dashboard.js reads both. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="metrics.js"></script>
+<script src="../data/delays.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

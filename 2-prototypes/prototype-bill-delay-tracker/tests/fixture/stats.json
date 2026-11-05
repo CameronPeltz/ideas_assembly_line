@@ -1,0 +1,145 @@
+{
+ "as_of": "2026-10-14",
+ "computed_at": "2026-10-17T03:15:08+00:00",
+ "congress": "119",
+ "bills_with_text": 3,
+ "text_versions": 6,
+ "bills_summarized": 3,
+ "bills_reported_by_committee": 1,
+ "introduced_with_summary": 1,
+ "introduced_awaiting_summary": 1,
+ "pages": {
+  "versions_with_count": 3,
+  "versions_total": 6,
+  "total": 3036,
+  "mean": 1012
+ },
+ "delay_days": {
+  "n": 3,
+  "mean": 47.3,
+  "median": 18,
+  "max": 124
+ },
+ "by_stage": {
+  "introduced": {
+   "n": 1,
+   "mean": 0,
+   "median": 0,
+   "max": 0,
+   "min": 0
+  },
+  "reported": {
+   "n": 1,
+   "mean": 124,
+   "median": 124,
+   "max": 124,
+   "min": 124
+  },
+  "passed": {
+   "n": 1,
+   "mean": 18,
+   "median": 18,
+   "max": 18,
+   "min": 18
+  }
+ },
+ "introduced_histogram": [
+  {
+   "from": 0,
+   "to": 7,
+   "count": 1
+  },
+  {
+   "from": 7,
+   "to": 14,
+   "count": 0
+  },
+  {
+   "from": 14,
+   "to": 30,
+   "count": 0
+  },
+  {
+   "from": 30,
+   "to": 60,
+   "count": 0
+  },
+  {
+   "from": 60,
+   "to": 90,
+   "count": 0
+  },
+  {
+   "from": 90,
+   "to": 180,
+   "count": 0
+  },
+  {
+   "from": 180,
+   "to": 365,
+   "count": 0
+  },
+  {
+   "from": 365,
+   "to": null,
+   "count": 0
+  }
+ ],
+ "awaiting_histogram": [
+  {
+   "from": 0,
+   "to": 7,
+   "count": 1
+  },
+  {
+   "from": 7,
+   "to": 14,
+   "count": 0
+  },
+  {
+   "from": 14,
+   "to": 30,
+   "count": 0
+  },
+  {
+   "from": 30,
+   "to": 60,
+   "count": 0
+  },
+  {
+   "from": 60,
+   "to": 90,
+   "count": 0
+  },
+  {
+   "from": 90,
+   "to": 180,
+   "count": 0
+  },
+  {
+   "from": 180,
+   "to": 365,
+   "count": 0
+  },
+  {
+   "from": 365,
+   "to": null,
+   "count": 0
+  }
+ ],
+ "monthly_introduced": [
+  {
+   "month": "2026-10",
+   "summarized": 1,
+   "awaiting": 1,
+   "median_lag": 0,
+   "p90_lag": 0
+  }
+ ],
+ "summaries_collected": 4,
+ "caveats": [
+  "delay = summary last-update date minus the date printed on the text version; the API has no first-published date for summaries, so revised summaries overstate the lag",
+  "'awaiting' means no introduced-stage summary appears in the summaries collected so far; a partial summaries sweep inflates it",
+  "page counts come from GovInfo package summaries, one call per version, and may cover only a sample"
+ ]
+}

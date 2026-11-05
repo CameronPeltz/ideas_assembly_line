@@ -1,0 +1,299 @@
+{
+ "as_of": "2026-10-15",
+ "computed_at": "2026-10-17T03:52:06+00:00",
+ "congress": "119",
+ "bills_with_text": 16873,
+ "text_versions": 19982,
+ "bills_summarized": 5195,
+ "bills_reported_by_committee": 1217,
+ "introduced_with_summary": 4779,
+ "introduced_awaiting_summary": 11989,
+ "pages": {
+  "versions_with_count": 19982,
+  "versions_total": 19982,
+  "total": 255049,
+  "mean": 12.8
+ },
+ "delay_days": {
+  "n": 5290,
+  "mean": 142.9,
+  "median": 82.0,
+  "max": 601
+ },
+ "by_stage": {
+  "introduced": {
+   "n": 4779,
+   "mean": 147.3,
+   "median": 85,
+   "max": 601,
+   "min": -323
+  },
+  "reported": {
+   "n": 337,
+   "mean": 70.5,
+   "median": 40,
+   "max": 452,
+   "min": 0
+  },
+  "passed": {
+   "n": 77,
+   "mean": 103.6,
+   "median": 67,
+   "max": 391,
+   "min": 0
+  },
+  "enrolled": {
+   "n": 97,
+   "mean": 209.3,
+   "median": 186,
+   "max": 515,
+   "min": 4
+  }
+ },
+ "introduced_histogram": [
+  {
+   "from": 0,
+   "to": 7,
+   "count": 387
+  },
+  {
+   "from": 7,
+   "to": 14,
+   "count": 324
+  },
+  {
+   "from": 14,
+   "to": 30,
+   "count": 559
+  },
+  {
+   "from": 30,
+   "to": 60,
+   "count": 682
+  },
+  {
+   "from": 60,
+   "to": 90,
+   "count": 493
+  },
+  {
+   "from": 90,
+   "to": 180,
+   "count": 785
+  },
+  {
+   "from": 180,
+   "to": 365,
+   "count": 1015
+  },
+  {
+   "from": 365,
+   "to": null,
+   "count": 528
+  }
+ ],
+ "awaiting_histogram": [
+  {
+   "from": 0,
+   "to": 7,
+   "count": 68
+  },
+  {
+   "from": 7,
+   "to": 14,
+   "count": 310
+  },
+  {
+   "from": 14,
+   "to": 30,
+   "count": 330
+  },
+  {
+   "from": 30,
+   "to": 60,
+   "count": 264
+  },
+  {
+   "from": 60,
+   "to": 90,
+   "count": 758
+  },
+  {
+   "from": 90,
+   "to": 180,
+   "count": 1955
+  },
+  {
+   "from": 180,
+   "to": 365,
+   "count": 3419
+  },
+  {
+   "from": 365,
+   "to": null,
+   "count": 4885
+  }
+ ],
+ "monthly_introduced": [
+  {
+   "month": "2025-01",
+   "summarized": 176,
+   "awaiting": 8,
+   "median_lag": 12.0,
+   "p90_lag": 42
+  },
+  {
+   "month": "2025-02",
+   "summarized": 943,
+   "awaiting": 121,
+   "median_lag": 46,
+   "p90_lag": 204
+  },
+  {
+   "month": "2025-03",
+   "summarized": 1241,
+   "awaiting": 705,
+   "median_lag": 111,
+   "p90_lag": 410
+  },
+  {
+   "month": "2025-04",
+   "summarized": 475,
+   "awaiting": 714,
+   "median_lag": 288,
+   "p90_lag": 474
+  },
+  {
+   "month": "2025-05",
+   "summarized": 298,
+   "awaiting": 767,
+   "median_lag": 276.5,
+   "p90_lag": 482
+  },
+  {
+   "month": "2025-06",
+   "summarized": 160,
+   "awaiting": 592,
+   "median_lag": 275.0,
+   "p90_lag": 412
+  },
+  {
+   "month": "2025-07",
+   "summarized": 195,
+   "awaiting": 625,
+   "median_lag": 258,
+   "p90_lag": 385
+  },
+  {
+   "month": "2025-08",
+   "summarized": 170,
+   "awaiting": 648,
+   "median_lag": 238.0,
+   "p90_lag": 349
+  },
+  {
+   "month": "2025-09",
+   "summarized": 129,
+   "awaiting": 412,
+   "median_lag": 189,
+   "p90_lag": 356
+  },
+  {
+   "month": "2025-10",
+   "summarized": 177,
+   "awaiting": 513,
+   "median_lag": 117,
+   "p90_lag": 293
+  },
+  {
+   "month": "2025-11",
+   "summarized": 88,
+   "awaiting": 332,
+   "median_lag": 126.5,
+   "p90_lag": 244
+  },
+  {
+   "month": "2025-12",
+   "summarized": 98,
+   "awaiting": 570,
+   "median_lag": 96.5,
+   "p90_lag": 274
+  },
+  {
+   "month": "2026-01",
+   "summarized": 73,
+   "awaiting": 572,
+   "median_lag": 92,
+   "p90_lag": 252
+  },
+  {
+   "month": "2026-02",
+   "summarized": 92,
+   "awaiting": 708,
+   "median_lag": 60.5,
+   "p90_lag": 217
+  },
+  {
+   "month": "2026-03",
+   "summarized": 100,
+   "awaiting": 603,
+   "median_lag": 26.0,
+   "p90_lag": 170
+  },
+  {
+   "month": "2026-04",
+   "summarized": 89,
+   "awaiting": 684,
+   "median_lag": 21,
+   "p90_lag": 112
+  },
+  {
+   "month": "2026-05",
+   "summarized": 50,
+   "awaiting": 549,
+   "median_lag": 30.5,
+   "p90_lag": 117
+  },
+  {
+   "month": "2026-06",
+   "summarized": 71,
+   "awaiting": 838,
+   "median_lag": 24,
+   "p90_lag": 94
+  },
+  {
+   "month": "2026-07",
+   "summarized": 65,
+   "awaiting": 705,
+   "median_lag": 33,
+   "p90_lag": 76
+  },
+  {
+   "month": "2026-08",
+   "summarized": 39,
+   "awaiting": 430,
+   "median_lag": 22,
+   "p90_lag": 58
+  },
+  {
+   "month": "2026-09",
+   "summarized": 37,
+   "awaiting": 515,
+   "median_lag": 8,
+   "p90_lag": 27
+  },
+  {
+   "month": "2026-10",
+   "summarized": 13,
+   "awaiting": 378,
+   "median_lag": 7,
+   "p90_lag": 12
+  }
+ ],
+ "summaries_collected": 5337,
+ "caveats": [
+  "delay = summary last-update date minus the date printed on the text version; the API has no first-published date for summaries, so revised summaries overstate the lag",
+  "'awaiting' means no introduced-stage summary appears in the summaries collected so far; a partial summaries sweep inflates it",
+  "page counts come from GovInfo package summaries, one call per version, and may cover only a sample"
+ ]
+}
